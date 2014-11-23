@@ -16,23 +16,23 @@ To start a web server for the application, run:
 
 ## Namespaces in the app
 
-```clojure
+```clj
   guestbook.handler
 ```
 Responsible for bootstrapping and creating the hander for the server to pass requests to the
 application
 
-```clojure
+```clj
   guestbook.routes.name
 ```
 Workflow/routes lives here
 
-```clojure
+```clj
   guestbook.views.layout
 ```
 Manages application layout
 
-```clojure
+```clj
   guestbook.models.db
 ```
 Governs the data model for the application, connection, table definitions etc
