@@ -2,7 +2,11 @@
   (:require [compojure.core :refer :all]
             [guestbook.views.layout :as layout]
             [hiccup.form :refer :all]
-            [guestbook.models.db :as db]))
+            [guestbook.models.db :as db]
+            [clj-time.coerce :as coerce]))
+
+(defn format-time [timestamp]
+  (coerce/to-date timestamp))
 
 (defn show-guests []
   [:ul.guests
@@ -10,7 +14,7 @@
      [:li
        [:blockquote message]
        [:p "-" [:cite name]]
-       [:time timestamp]])])
+       [:time (format-time timestamp)]])])
 
 
 (defn home [& [name message error]]

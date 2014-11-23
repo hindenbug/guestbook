@@ -6,7 +6,6 @@
 (def conn
   (mg/get-db (mg/connect) "monger-test"))
 
-
 ;; find-maps to return all mongo records as clojure maps
 (defn read-guests []
   (mc/find-maps conn "users"))
